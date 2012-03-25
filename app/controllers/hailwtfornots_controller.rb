@@ -14,6 +14,8 @@ class HailwtfornotsController < ApplicationController
   # GET /hailwtfornots/1.json
   def show
     @hailwtfornot = Hailwtfornot.find(params[:id])
+    @image1 = Image.find(@hailwtfornot.image1)
+    @image2 = Image.find(@hailwtfornot.image2)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -40,10 +42,10 @@ class HailwtfornotsController < ApplicationController
   # POST /hailwtfornots
   # POST /hailwtfornots.json
   def create
-    @hailwtfornot = Hailwtfornot.new(params[:hailwtfornot])
+    @hailwtfornot = Hailwtfornot.create_new params
 
     respond_to do |format|
-      if @hailwtfornot.save
+      if !@hailwtfornot.errors.any?
         format.html { redirect_to @hailwtfornot, notice: 'Hailwtfornot was successfully created.' }
         format.json { render json: @hailwtfornot, status: :created, location: @hailwtfornot }
       else

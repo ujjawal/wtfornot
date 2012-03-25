@@ -1,0 +1,29 @@
+%p#notice= notice
+
+%p
+  %b Title
+  = @hailwtfornot.title
+
+%p
+  %b Url
+  = @hailwtfornot.url
+
+%p
+  %b User:
+  = @hailwtfornot.user_id
+
+%p
+  %b Points:
+  = @hailwtfornot.points
+
+%p
+  %b Image1:
+  = image_tag @image1.file.url
+
+%p
+  %b Image2:
+  = image_tag @image2.file.url
+
+
+= link_to 'Edit', edit_hailwtfornot_path(@hailwtfornot) |
+= link_to 'Back', hailwtfornots_path

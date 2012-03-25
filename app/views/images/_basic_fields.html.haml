@@ -1,0 +1,9 @@
+- if !defined? obj
+  - obj = "image"
+
+.field
+  = label :"#{obj}", :name
+  = text_field :"#{obj}", :name
+.field
+  = file_field :"#{obj}", :file
+

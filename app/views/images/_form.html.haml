@@ -7,13 +7,6 @@
         - @image.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :points
-    = f.number_field :points
-  .field
-    = f.file_field :file
+  = render 'basic_fields'
   .actions
     = f.submit
