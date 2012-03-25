@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @hailwtfornot.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @hailwtfornot.url %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @hailwtfornot.user_id %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @hailwtfornot.points %>
+</p>
+
+<p>
+  <b>Image1:</b>
+  <%= @hailwtfornot.image1 %>
+</p>
+
+<p>
+  <b>Image2:</b>
+  <%= @hailwtfornot.image2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_hailwtfornot_path(@hailwtfornot) %> |
+<%= link_to 'Back', hailwtfornots_path %>

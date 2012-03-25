@@ -1,0 +1,33 @@
+<h1>Listing hailwtfornots</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>User</th>
+    <th>Points</th>
+    <th>Image1</th>
+    <th>Image2</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hailwtfornots.each do |hailwtfornot| %>
+  <tr>
+    <td><%= hailwtfornot.title %></td>
+    <td><%= hailwtfornot.url %></td>
+    <td><%= hailwtfornot.user_id %></td>
+    <td><%= hailwtfornot.points %></td>
+    <td><%= hailwtfornot.image1 %></td>
+    <td><%= hailwtfornot.image2 %></td>
+    <td><%= link_to 'Show', hailwtfornot %></td>
+    <td><%= link_to 'Edit', edit_hailwtfornot_path(hailwtfornot) %></td>
+    <td><%= link_to 'Destroy', hailwtfornot, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hailwtfornot', new_hailwtfornot_path %>

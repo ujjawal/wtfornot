@@ -1,0 +1,28 @@
+development:
+  username: root
+  password: foobar
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  reconnect: false
+  database: wtfornot_dev
+  timeout: 5000
+
+test:
+  username: root
+  password: foobar
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: wtfornot_test
+  timeout: 5000
+
+production:
+  username: root
+  password: foobar
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  reconnect: false
+  database: wtfornot_production
+  timeout: 5000
