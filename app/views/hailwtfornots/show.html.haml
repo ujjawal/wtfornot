@@ -1,29 +1,47 @@
+= stylesheet_link_tag    "hailwtfornots"
+
 %p#notice= notice
 
-%p
-  %b Title
-  = @hailwtfornot.title
+.details
+  %h1= @hailwtfornot.title
 
-%p
-  %b Url
-  = @hailwtfornot.url
+  %p
+    %b Created By:
+    = @hailwtfornot.user_id
 
-%p
-  %b User:
-  = @hailwtfornot.user_id
+  %p Click on an image to give it a Fuck
 
-%p
-  %b Points:
-  = @hailwtfornot.points
+.left
+  %p
+    %h4.fucks_given_image1 Fucks Given: #{@image1.points}
+    = link_to (image_tag @image1.file.url(:medium)), "#", :class => "img_link", :value => @image1.id, :points => @image1.points, :fucks_given_el => ".fucks_given_image1"
 
-%p
-  %b Image1:
-  = image_tag @image1.file.url
+.right
+  %p
+    %h4.fucks_given_image2 Fucks Given: #{@image2.points}
+    = link_to (image_tag @image2.file.url(:medium)), "#", :class => "img_link", :value => @image2.id, :points => @image2.points, :fucks_given_el => ".fucks_given_image2"
 
-%p
-  %b Image2:
-  = image_tag @image2.file.url
+:javascript
+  $(".img_link").click(function(e) {
+    e.preventDefault();
+    image_id = this.getAttribute('value')
+    fucks_given = parseInt(this.getAttribute('points'))
+    fucks_given_el = this.getAttribute('fucks_given_el')
+    $.post("#{add_point_image_path}", 
+      {image_id: image_id}, 
+      function(data){
+        if(data.result == "success"){
+          html = "Fucks Given: " + (fucks_given + 1)
+          alert(html)
+          $(fucks_given_el).html(html)
+          $(".img_link").css('pointer-events', 'none')
+          $(".img_link").css('cursor', 'default')
+        }
+        else{
+          alert("Failed to give it a fuck")
+        }
+      }
+    )
+    return false;
+   });
 
-
-= link_to 'Edit', edit_hailwtfornot_path(@hailwtfornot) |
-= link_to 'Back', hailwtfornots_path

@@ -1,0 +1,13 @@
+%html
+  %head
+    %title Wtfornot (Accepts only jpeg, png and gif)
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .heading
+      = link_to Wtfornot, root_url
+    %br    
+    %hr
+    = yield
+

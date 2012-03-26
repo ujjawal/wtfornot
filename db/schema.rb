@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(:version => 20120325191909) do
     t.string   "title"
     t.string   "url"
     t.integer  "user_id"
-    t.integer  "points"
+    t.integer  "points",     :default => 0
     t.integer  "image1"
     t.integer  "image2"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "image_files", :force => true do |t|
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(:version => 20120325191909) do
 
   create_table "images", :force => true do |t|
     t.string   "name"
-    t.integer  "points"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "points",            :default => 0
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(:version => 20120325191909) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "points"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.integer  "points",              :default => 0
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

@@ -4,6 +4,15 @@
 
 
 #$ ->
+#  $(".img_link").click (e)-> 
+#    e.preventDefault()
+#    image_id = this.getAttribute('value')
+#    $.post("images/add_point", 
+#      {image_id: image_id}, 
+#      (data) -> 
+#        alert('data')
+#      )
+#    return false
 #  uploader = new qq.FileUploader({
 #    debug: false,
 #    element: document.getElementById('file-uploader'),

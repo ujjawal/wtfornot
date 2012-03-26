@@ -53,6 +53,19 @@ class ImagesController < ApplicationController
     end
   end
 
+  # POST /images/1/add_point
+  # POST /images/1/add_point.json
+  def add_point
+    @image = Image.find(params[:image_id])
+    @image.points+=1
+
+    if @image.save
+      render :json => { :result => "success"}
+    else
+      render :json => { :result => "failure"}
+    end
+  end
+
   # PUT /images/1
   # PUT /images/1.json
   def update

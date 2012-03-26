@@ -15,8 +15,8 @@ class Hailwtfornot < ActiveRecord::Base
         hailwtfornot.save!
       end
     rescue ActiveRecord::RecordInvalid
-      hailwtfornot.errors.add(type.to_sym, image1.errors.full_messages.join(' ')) if image1.errors.any?
-      hailwtfornot.errors.add(type.to_sym, image2.errors.full_messages.join(' ')) if image2.errors.any?
+      hailwtfornot.errors.add(:base, image1.errors.full_messages.join(' ')) if image1.errors.any?
+      hailwtfornot.errors.add(:base, image2.errors.full_messages.join(' ')) if image2.errors.any?
     end
     hailwtfornot
   end

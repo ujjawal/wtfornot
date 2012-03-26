@@ -4,7 +4,7 @@ class CreateHailwtfornots < ActiveRecord::Migration
       t.string :title
       t.string :url
       t.integer :user_id
-      t.integer :points
+      t.integer :points, :default => 0
       t.integer :image1
       t.integer :image2
 

@@ -5,7 +5,13 @@ Wtfornot::Application.routes.draw do
 
   resources :users
 
-  resources :images
+  resources :images do
+    member do
+      post :add_point
+    end
+  end
+  
+  root :to => 'hailwtfornots#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

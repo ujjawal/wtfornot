@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.integer :points
+      t.integer :points, :default => 0
 
       t.timestamps
     end
