@@ -18,6 +18,14 @@ $ ->
     this.style.backgroundColor = ""
     this.style.cursor = ""
 
+  $(".image-with-points").mouseover ->
+    this.style.backgroundColor = "#ccc"
+    this.style.cursor = "pointer"
+    
+  $(".image-with-points").mouseout ->
+    this.style.backgroundColor = ""
+    this.style.cursor = ""
+
 #  $(".img_link").click (e)-> 
 #    e.preventDefault()
 #    image_id = this.getAttribute('value')
