@@ -1,27 +1,33 @@
-%h1 Listing wtfornots
+-#.primary
+-#  .primary
+-#    %h2 Most fucks given to these images
+-#  .secondary
+-#    %h2 Most fucks given to these wtfornots
+-#.secondary
+-#  %h2 Most fucks given to these users
+=  javascript_include_tag 'hailwtfornots'
+.box
+  %h2 Most fucks given to these images
+  %p
+    #paginator
+      = paginate @images,:remote => true
 
-%table
-  %tr
-    %th Title
-    %th Url
-    %th User
-    %th Points
-    %th Image1
-    %th Image2
-    %th
-    %th
-    %th
+    - @images.each do |i|
+      = image_tag i.file.url(:medium), :class => 'medium2'
+.bottom
 
-  - @hailwtfornots.each do |hailwtfornot|
-    %tr
-      %td= hailwtfornot.title
-      %td= hailwtfornot.url
-      %td= hailwtfornot.user_id
-      %td= hailwtfornot.points
-      %td= hailwtfornot.image1
-      %td= hailwtfornot.image2
-      %td= link_to 'Show', hailwtfornot
-      %td= link_to 'Edit', edit_hailwtfornot_path(hailwtfornot)
-      %td= link_to 'Destroy', hailwtfornot, confirm: 'Are you sure?', method: :delete
+.box
+  %h2 Most fucks given to these wtfornots
+  %p
+    .paginate
+      =paginate @hailwtfornots
 
-= link_to 'New wtfornot', new_hailwtfornot_path
+.bottom
+
+.box
+  %h2 Most fucks given to these users
+  %p
+    .paginate
+      =paginate @users
+
+.bottom

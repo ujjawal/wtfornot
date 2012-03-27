@@ -13,14 +13,45 @@
 */
 
 body {
+  text-align: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  text-align: left;
   width: 90%;
-  margin-left: 5%;
   margin-top: 2%;
+  max-width: 125em;
+  min-width: 62em;
+  overflow: hidden;
+  position: relative;
+}
+
+.box {
+  width: 28%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 520px;
+  margin-bottom: 500px;
+  margin-left: 20px;
+  float: left;
+  display: inline;
+  padding: 20px;
+  background: #89ac10
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  height: 20px;
+  width: 290px;
+  margin-left: -20px;
 }
 
 .heading {
   text-align: center;
-  font-size: 40px;
+  font-size: 25px;
 }
 
 a {
@@ -39,10 +70,19 @@ a {
   margin-right: -5%;
 }
 
-img {
+.medium {
   height: 400px;
   width: 400px;
   border-width: 5px;
   border-style: solid;
+}
+
+.medium2 {
+  height: 150px;
+  width: 150px;
+  border-width: 5px;
+  border-style: solid;
+  margin-left: 22%;
+  margin-top: 2%;
 }
 

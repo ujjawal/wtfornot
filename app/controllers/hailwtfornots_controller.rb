@@ -2,7 +2,9 @@ class HailwtfornotsController < ApplicationController
   # GET /hailwtfornots
   # GET /hailwtfornots.json
   def index
-    @hailwtfornots = Hailwtfornot.all
+    @hailwtfornots = Hailwtfornot.order('points DESC').page params[:page]
+    @images = Image.order('points DESC').page params[:page]
+    @users = User.order('points DESC').page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
