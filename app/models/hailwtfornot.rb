@@ -1,5 +1,5 @@
 class Hailwtfornot < ActiveRecord::Base
-  paginates_per 5
+  paginates_per 4
 
   def self.create_new params
     hailwtfornot = Hailwtfornot.new(params[:hailwtfornot])

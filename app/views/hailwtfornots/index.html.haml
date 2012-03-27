@@ -24,6 +24,7 @@
       - img2 = Image.find(h.image2)
       .wtfornot
         = hidden_field_tag nil, hailwtfornot_path(h), :class => ".hidden"
+        %p.center #{h.points} fucks given
         .left
           %p
             = image_tag img1.file.url(:medium), :class=> 'medium3'
