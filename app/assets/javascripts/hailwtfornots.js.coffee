@@ -9,6 +9,15 @@ $ ->
   $('.wtfornot').click (e)->
     window.location = this.firstElementChild.getAttribute('value')
     return false
+
+  $(".wtfornot").mouseover ->
+    this.style.backgroundColor = "#ccc"
+    this.style.cursor = "pointer"
+    
+  $(".wtfornot").mouseout ->
+    this.style.backgroundColor = ""
+    this.style.cursor = ""
+
 #  $(".img_link").click (e)-> 
 #    e.preventDefault()
 #    image_id = this.getAttribute('value')

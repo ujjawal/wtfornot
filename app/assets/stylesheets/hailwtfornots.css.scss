@@ -35,11 +35,12 @@
   }
 }
 
-.content .box .wtfornot:hover {
+/*doing this in js to get it working in firefox*/
+/*.content .box .wtfornot:hover {
   background-color:#ccc;
   cursor: hand;
   cursor: pointer;
-}
+}*/
 
 .show img:hover {
   border:5px solid #ff9900;
