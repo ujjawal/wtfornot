@@ -11,6 +11,10 @@
 
   %p.medium-font
     %b.total_fucks_given Total fucks given: #{@hailwtfornot.points}
+  
+  = button_to "Create your own wtfornot", new_hailwtfornot_path, :method => :get, :class => "buttonTo"
+
+  %h1 OR
 
   %br
   %p Click on an image to give it a Fuck
@@ -26,6 +30,7 @@
     %p
       %h4.fucks_given_image2 Fucks Given: #{@image2.points}
       = link_to (image_tag @image2.file.url(:medium), :class => 'medium'), "#", :class => "img_link", :value => @image2.id, :points => @image2.points, :fucks_given_el => ".fucks_given_image2", :hailwtfornot_id => @hailwtfornot.id, :total_fucks_given_el => '.total_fucks_given', :total_points => @hailwtfornot.points
+
 
 :javascript
   $(".img_link").click(function(e) {

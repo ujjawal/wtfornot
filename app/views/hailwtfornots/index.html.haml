@@ -1,5 +1,8 @@
 = stylesheet_link_tag 'hailwtfornots'
 = javascript_include_tag 'hailwtfornots'
+
+%h1.center Leaderboard
+
 .box
   %h2 Most fucks given to these images
   %p
@@ -28,12 +31,13 @@
         .left
           %p
             = image_tag img1.file.url(:medium), :class=> 'medium3'
-            %h4.vs Vs
+            %h4.vs-index Vs
 
         .right
           %p
             = image_tag img2.file.url(:medium), :class => 'medium3'
 
+  = button_to "Create your own wtfornot", new_hailwtfornot_path, :method => :get, :class => "buttonToSmall"
 .bottom
 
 .box

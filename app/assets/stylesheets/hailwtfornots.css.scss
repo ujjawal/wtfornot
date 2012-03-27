@@ -8,6 +8,11 @@
 
 .vs {
   float: right;
+  margin-top: 10%;
+}
+
+.vs-index {
+  float: right;
   margin-top: -50%;
 }
 
@@ -33,6 +38,9 @@
     float: right;
     margin-right: -8%;
   }
+  p {
+    margin-bottom: 5%;
+  }
 }
 
 /*doing this in js to get it working in firefox*/
@@ -48,6 +56,33 @@
 
 .center {
   text-align: center; 
-  margin-bottom: 5%;
 }
 
+.buttonTo {
+  background: #F90;
+  width: 400px;
+  height: 100px;
+  font-size: 30px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-box-shadow:1px 1px 5px #999;
+  -moz-box-shadow:1px 1px 5px #999;
+}
+
+.buttonToSmall {
+  background: #ccc;
+  width: 200px;
+  height: 50px;
+  font-size: 15px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 25%;
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-box-shadow:1px 1px 5px #999;
+  -moz-box-shadow:1px 1px 5px #999;
+}
