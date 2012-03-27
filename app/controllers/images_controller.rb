@@ -57,12 +57,16 @@ class ImagesController < ApplicationController
   # POST /images/1/add_point.json
   def add_point
     @image = Image.find(params[:image_id])
+    @hailwtfornot = Hailwtfornot.find(params[:hailwtfornot_id])
     @image.points+=1
+    @hailwtfornot.points+=1
 
-    if @image.save
-      render :json => { :result => "success"}
-    else
-      render :json => { :result => "failure"}
+    Hailwtfornot.transaction do
+      if @image.save and @hailwtfornot.save!
+        render :json => { :result => "success"}
+      else
+        render :json => { :result => "failure"}
+      end
     end
   end
 

@@ -12,19 +12,43 @@
  *= require_tree .
 */
 
+
+* {
+    margin: 0;
+}
 body {
   text-align: center;
+  background-color: #ccc;
+}
+
+html, body {
+    height: 100%;
 }
 
 .wrapper {
-  margin: 0 auto;
+  /*margin: 0 auto;
   text-align: left;
   width: 90%;
-  margin-top: 2%;
+  margin-top: 3%;
   max-width: 125em;
   min-width: 62em;
   overflow: hidden;
-  position: relative;
+  position: relative;*/
+  text-align: left;
+  max-width: 125em;
+  min-width: 62em;
+  overflow: hidden;
+  margin-top: 3%;
+  width: 90%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.footer, .push {
+  height: 6em;
+  clear: both;
 }
 
 .box {
@@ -33,12 +57,17 @@ body {
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 520px;
-  margin-bottom: 500px;
   margin-left: 20px;
+  /*margin-bottom: 10%;*/
   float: left;
   display: inline;
   padding: 20px;
-  background: #89ac10
+  background: #FF9900;
+  height: 140%;
+  h2 {
+    text-align: center;
+    margin-bottom: 5%;
+  }
 }
 
 .bottom {
@@ -52,10 +81,16 @@ body {
 .heading {
   text-align: center;
   font-size: 25px;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 a {
   text-decoration: none;
+}
+
+a:hover{
+  background-color: #ff9900;
 }
 
 .left {
@@ -73,16 +108,47 @@ a {
 .medium {
   height: 400px;
   width: 400px;
-  border-width: 5px;
-  border-style: solid;
+  /*border-width: 5px;
+  border-style: solid;*/
 }
 
 .medium2 {
   height: 150px;
   width: 150px;
-  border-width: 5px;
-  border-style: solid;
-  margin-left: 22%;
+  /*border-width: 5px;
+  border-style: solid;*/
+  margin-left: 4%;
   margin-top: 2%;
 }
 
+.medium3 {
+  height: 100px;
+  width: 100px;
+  /*border-width: 5px;
+  border-style: solid;*/
+}
+
+img {
+  border:5px solid #ccc;
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-box-shadow:1px 1px 5px #999;
+  -moz-box-shadow:1px 1px 5px #999;
+}
+
+/*.footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;   /* Height of the footer */
+/*  background:#ccc;
+}*/
+
+.paginate{
+  margin-bottom: 5%;
+}
+
+.medium-font {
+  font-size: 20px;
+}

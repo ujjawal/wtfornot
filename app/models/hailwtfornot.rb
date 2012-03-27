@@ -13,6 +13,7 @@ class Hailwtfornot < ActiveRecord::Base
         image2.save!
         hailwtfornot.image1 = image1.id
         hailwtfornot.image2 = image2.id
+        hailwtfornot.points = image1.points + image2.points
         hailwtfornot.save!
       end
     rescue ActiveRecord::RecordInvalid
@@ -21,4 +22,12 @@ class Hailwtfornot < ActiveRecord::Base
     end
     hailwtfornot
   end
+
+  #def image1
+  #  Image.find(image1) if image1
+  #end
+
+  #def image2
+  #  Image.find(image2) if image2
+  #end
 end

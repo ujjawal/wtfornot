@@ -1,26 +1,37 @@
--#.primary
--#  .primary
--#    %h2 Most fucks given to these images
--#  .secondary
--#    %h2 Most fucks given to these wtfornots
--#.secondary
--#  %h2 Most fucks given to these users
-=  javascript_include_tag 'hailwtfornots'
+= stylesheet_link_tag 'hailwtfornots'
+= javascript_include_tag 'hailwtfornots'
 .box
   %h2 Most fucks given to these images
   %p
-    #paginator
-      = paginate @images,:remote => true
+    .paginate
+      = paginate @images, :param_name => 'image_page'
 
     - @images.each do |i|
-      = image_tag i.file.url(:medium), :class => 'medium2'
+      .image-with-points
+        = image_tag i.file.url(:medium), :class => 'medium2'
+        %p #{i.points} fucks given
+
 .bottom
 
 .box
   %h2 Most fucks given to these wtfornots
   %p
     .paginate
-      =paginate @hailwtfornots
+      =paginate @hailwtfornots, :param_name => 'wtfornot_page'
+
+    - @hailwtfornots.each do |h|
+      - img1 = Image.find(h.image1)
+      - img2 = Image.find(h.image2)
+      .wtfornot
+        = hidden_field_tag nil, hailwtfornot_path(h), :class => ".hidden"
+        .left
+          %p
+            = image_tag img1.file.url(:medium), :class=> 'medium3'
+            %h4.vs Vs
+
+        .right
+          %p
+            = image_tag img2.file.url(:medium), :class => 'medium3'
 
 .bottom
 

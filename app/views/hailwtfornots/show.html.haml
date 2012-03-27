@@ -5,35 +5,45 @@
 .details
   %h1= @hailwtfornot.title
 
-  %p
-    %b Created By:
+  %p.medium-font
+    %b Wtfornot Created By:
     = @hailwtfornot.user_id
 
+  %p.medium-font
+    %b.total_fucks_given Total fucks given: #{@hailwtfornot.points}
+
+  %br
   %p Click on an image to give it a Fuck
 
-.left
-  %p
-    %h4.fucks_given_image1 Fucks Given: #{@image1.points}
-    = link_to (image_tag @image1.file.url(:medium), :class=> 'medium'), "#", :class => "img_link", :value => @image1.id, :points => @image1.points, :fucks_given_el => ".fucks_given_image1"
-    %h1.vs Vs
+.show
+  .left
+    %p
+      %h4.fucks_given_image1 Fucks Given: #{@image1.points}
+      = link_to (image_tag @image1.file.url(:medium), :class=> 'medium'), "#", :class => "img_link", :value => @image1.id, :points => @image1.points, :fucks_given_el => ".fucks_given_image1", :hailwtfornot_id => @hailwtfornot.id, :total_fucks_given_el => '.total_fucks_given', :total_points => @hailwtfornot.points 
+      %h1.vs Vs
 
-.right
-  %p
-    %h4.fucks_given_image2 Fucks Given: #{@image2.points}
-    = link_to (image_tag @image2.file.url(:medium), :class => 'medium'), "#", :class => "img_link", :value => @image2.id, :points => @image2.points, :fucks_given_el => ".fucks_given_image2"
+  .right
+    %p
+      %h4.fucks_given_image2 Fucks Given: #{@image2.points}
+      = link_to (image_tag @image2.file.url(:medium), :class => 'medium'), "#", :class => "img_link", :value => @image2.id, :points => @image2.points, :fucks_given_el => ".fucks_given_image2", :hailwtfornot_id => @hailwtfornot.id, :total_fucks_given_el => '.total_fucks_given', :total_points => @hailwtfornot.points
 
 :javascript
   $(".img_link").click(function(e) {
     e.preventDefault();
+    hailwtfornot_id = this.getAttribute('hailwtfornot_id')
     image_id = this.getAttribute('value')
     fucks_given = parseInt(this.getAttribute('points'))
+    total_fucks_given = parseInt(this.getAttribute('total_points'))
     fucks_given_el = this.getAttribute('fucks_given_el')
+    total_fucks_given_el = this.getAttribute('total_fucks_given_el')
     $.post("#{add_point_image_path}", 
-      {image_id: image_id}, 
+      {image_id: image_id, hailwtfornot_id: hailwtfornot_id}, 
       function(data){
         if(data.result == "success"){
           html = "Fucks Given: " + (fucks_given + 1)
+          total_fucks_given_html = "Total fucks given: " + (total_fucks_given + 1)
           $(fucks_given_el).html(html)
+          $(total_fucks_given_el).html(total_fucks_given_html)
           $(".img_link").css('pointer-events', 'none')
           $(".img_link").css('cursor', 'default')
         }

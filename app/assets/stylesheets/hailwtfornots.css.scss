@@ -8,4 +8,37 @@
 
 .vs {
   float: right;
+  margin-top: -50%;
+}
+
+.image-with-points {
+  img {
+    float: left;
+  }
+  p {
+    float: right;
+    margin-right: 10%;
+    margin-top: 5%;
+  }
+}
+
+.wtfornot {
+  height: 110px;
+  margin-bottom: 10%;
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+}
+
+.wtfornot:hover {
+  background-color:#ccc;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.show img:hover {
+  border:5px solid #ff9900;
 }
