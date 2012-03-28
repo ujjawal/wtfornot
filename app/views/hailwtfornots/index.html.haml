@@ -3,9 +3,9 @@
 
 .how-strip
   - h = Hailwtfornot.where(:id => 1).first
-  = link_to "1. Create your own wtfornot", new_hailwtfornot_path
+  = link_to "1. Create your own wtfornot", new_path
   - if h
-    = link_to "2. Earn Fucks. See a sample", hailwtfornot_path(h)
+    = link_to "2. Earn Fucks. See a sample", "#{h.id}"
   = link_to "3. Get featured on the leaderboard", root_url
 
 %h1.center Leaderboard
@@ -34,7 +34,7 @@
       - img1 = h.image_1
       - img2 = h.image_2
       .wtfornot
-        = hidden_field_tag nil, hailwtfornot_path(h), :class => ".hidden"
+        = hidden_field_tag nil, "#{h.id}", :class => ".hidden"
         %p.center #{h.points} fucks given
         .left
           %p
@@ -45,7 +45,7 @@
           %p
             = image_tag img2.file.url(:medium), :class => 'medium3'
 
-  = button_to "Create your own wtfornot", new_hailwtfornot_path, :method => :get, :class => "buttonToSmall"
+  = button_to "Create your own wtfornot", new_path, :method => :get, :class => "buttonToSmall"
 .bottom
 
 .box

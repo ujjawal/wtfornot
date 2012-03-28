@@ -14,6 +14,8 @@ Wtfornot::Application.routes.draw do
   end
   
   root :to => 'hailwtfornots#index'
+  match 'new' => 'hailwtfornots#new'
+  match ':id' => 'hailwtfornots#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
