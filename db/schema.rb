@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20120325191909) do
 
   create_table "images", :force => true do |t|
     t.string   "name"
-    t.integer  "points",            :default => 0
+    t.integer  "points",            :default => 1
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
     t.string   "file_file_name"
