@@ -2,9 +2,11 @@ class Hailwtfornot < ActiveRecord::Base
   paginates_per 4
 
   validates :image1, :image2, :presence => true
+
+  belongs_to :image_1, :class_name => 'Image', :foreign_key => :image1
+  belongs_to :image_2, :class_name => 'Image', :foreign_key => :image2
   
   def self.create_new params
-    debugger
     hailwtfornot = Hailwtfornot.new(params[:hailwtfornot])
 
     image1 =  Image.new(params[:image1])
