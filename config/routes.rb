@@ -1,8 +1,6 @@
 Wtfornot::Application.routes.draw do
   devise_for :users
 
-  #resources :image_files
-
   resources :hailwtfornots
 
   #resources :users
@@ -16,6 +14,7 @@ Wtfornot::Application.routes.draw do
   root :to => 'hailwtfornots#index'
   match 'new' => 'hailwtfornots#new'
   match ':id' => 'hailwtfornots#show'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

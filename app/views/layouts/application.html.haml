@@ -1,6 +1,7 @@
 %html
   %head
     %title Give it a fuck: Made for Redditors, by a Redditor
+    = favicon_link_tag
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -8,10 +9,16 @@
     .wrapper
       .heading
         = link_to "GIAF (accepts only jpeg, png and gif)", root_url, :title => "Give it a fuck (accepts only jpeg, png and gif)"
+        .user
+          - if user_signed_in?
+            %p #{current_user.username}
+            = link_to "Edit Info", edit_user_registration_path
+            = link_to "Sign out", destroy_user_session_path, :method =>"delete" 
+          - else
+            %p Anonymous
+            = link_to "Sign in", new_user_session_path
         %br    
         %hr
-      %p.notice= notice
-      %p.alert= alert
       .content
         = yield
       .push

@@ -1,6 +1,6 @@
 class HailwtfornotsController < ApplicationController
 
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
   # GET /hailwtfornots
   # GET /hailwtfornots.json
@@ -41,7 +41,8 @@ class HailwtfornotsController < ApplicationController
 
   # GET /hailwtfornots/1/edit
   def edit
-    @hailwtfornot = Hailwtfornot.find(params[:id])
+    #@hailwtfornot = Hailwtfornot.find(params[:id])
+    raise ActionController::RoutingError.new('Not Found')
   end
 
   # POST /hailwtfornots
@@ -63,28 +64,30 @@ class HailwtfornotsController < ApplicationController
   # PUT /hailwtfornots/1
   # PUT /hailwtfornots/1.json
   def update
-    @hailwtfornot = Hailwtfornot.find(params[:id])
+    #@hailwtfornot = Hailwtfornot.find(params[:id])
 
-    respond_to do |format|
-      if @hailwtfornot.update_attributes(params[:hailwtfornot])
-        format.html { redirect_to @hailwtfornot, notice: 'Hailwtfornot was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @hailwtfornot.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @hailwtfornot.update_attributes(params[:hailwtfornot])
+    #    format.html { redirect_to @hailwtfornot, notice: 'Hailwtfornot was successfully updated.' }
+    #    format.json { head :no_content }
+    #  else
+    #    format.html { render action: "edit" }
+    #    format.json { render json: @hailwtfornot.errors, status: :unprocessable_entity }
+    #  end
+    #end
+    raise ActionController::RoutingError.new('Not Found')
   end
 
   # DELETE /hailwtfornots/1
   # DELETE /hailwtfornots/1.json
   def destroy
-    @hailwtfornot = Hailwtfornot.find(params[:id])
-    @hailwtfornot.destroy
+    #@hailwtfornot = Hailwtfornot.find(params[:id])
+    #@hailwtfornot.destroy
 
-    respond_to do |format|
-      format.html { redirect_to hailwtfornots_url }
-      format.json { head :no_content }
-    end
+    #respond_to do |format|
+    #  format.html { redirect_to hailwtfornots_url }
+    #  format.json { head :no_content }
+    #end
+    raise ActionController::RoutingError.new('Not Found')
   end
 end
