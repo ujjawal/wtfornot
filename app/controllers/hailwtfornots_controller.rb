@@ -1,4 +1,7 @@
 class HailwtfornotsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /hailwtfornots
   # GET /hailwtfornots.json
   def index

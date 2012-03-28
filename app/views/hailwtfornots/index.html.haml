@@ -2,9 +2,10 @@
 = javascript_include_tag 'hailwtfornots'
 
 .how-strip
-  - h = Hailwtfornot.find(1)
+  - h = Hailwtfornot.where(:id => 1).first
   = link_to "1. Create your own wtfornot", new_hailwtfornot_path
-  = link_to "2. Earn Fucks. See a sample", hailwtfornot_path(h)
+  - if h
+    = link_to "2. Earn Fucks. See a sample", hailwtfornot_path(h)
   = link_to "3. Get featured on the leaderboard", root_url
 
 %h1.center Leaderboard

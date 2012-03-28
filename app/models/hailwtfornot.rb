@@ -1,4 +1,5 @@
 class Hailwtfornot < ActiveRecord::Base
+
   paginates_per 4
 
   validates :image1, :image2, :presence => true

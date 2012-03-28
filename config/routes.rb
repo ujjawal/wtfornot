@@ -1,9 +1,11 @@
 Wtfornot::Application.routes.draw do
-  resources :image_files
+  devise_for :users
+
+  #resources :image_files
 
   resources :hailwtfornots
 
-  resources :users
+  #resources :users
 
   resources :images do
     member do
