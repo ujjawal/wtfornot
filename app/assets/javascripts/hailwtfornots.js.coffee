@@ -10,6 +10,10 @@ $ ->
     window.location = this.firstElementChild.getAttribute('value')
     return false
 
+  $('.image-with-points').click (e)->
+    window.location = this.firstElementChild.getAttribute('value')
+    return false
+
   $(".wtfornot").mouseover ->
     this.style.backgroundColor = "#ccc"
     this.style.cursor = "pointer"

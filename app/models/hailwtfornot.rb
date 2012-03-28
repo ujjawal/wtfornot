@@ -1,7 +1,10 @@
 class Hailwtfornot < ActiveRecord::Base
   paginates_per 4
 
+  validates :image1, :image2, :presence => true
+  
   def self.create_new params
+    debugger
     hailwtfornot = Hailwtfornot.new(params[:hailwtfornot])
 
     image1 =  Image.new(params[:image1])

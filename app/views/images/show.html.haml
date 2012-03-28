@@ -1,16 +1,12 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @image.name
+.image
+  %p
+    %b Name:
+    = @image.name
 
-%p
-  %b Points:
-  = @image.points
+  %p
+    %b Fucks given:
+    = @image.points
 
-= image_tag @image.file.url
-= image_tag @image.file.url(:medium)
-= image_tag @image.file.url(:thumb)
-
-= link_to 'Edit', edit_image_path(@image) |
-= link_to 'Back', images_path
+  = image_tag @image.file.url
