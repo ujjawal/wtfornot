@@ -125,10 +125,13 @@ form{
 }
 
 .how-strip {
+  font: 22px/14px sans-serif;
   text-align: center;
-  font-size: 25px;
-  margin-left: 8%;
+  /*font-size: 25px;*/
+  margin-left: 4%;
+  margin-bottom: 2%;
+  -moz-font-size: 18px;
   a {
-    margin-right: 6%;
+    margin-right: 3%;
   }
 }
