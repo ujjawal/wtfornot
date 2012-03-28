@@ -16,8 +16,8 @@ class HailwtfornotsController < ApplicationController
   # GET /hailwtfornots/1.json
   def show
     @hailwtfornot = Hailwtfornot.find(params[:id])
-    @image1 = Image.find(@hailwtfornot.image1)
-    @image2 = Image.find(@hailwtfornot.image2)
+    @image1 = @hailwtfornot.image_1
+    @image2 = @hailwtfornot.image_2
 
     respond_to do |format|
       format.html # show.html.erb

@@ -5,7 +5,11 @@ class Hailwtfornot < ActiveRecord::Base
 
   belongs_to :image_1, :class_name => 'Image', :foreign_key => :image1
   belongs_to :image_2, :class_name => 'Image', :foreign_key => :image2
-  
+ 
+  after_validation(:on => :create) do
+    self.title = self.image_1.name + " Vs " + self.image_2.name if self.title.blank?
+  end
+ 
   def self.create_new params
     hailwtfornot = Hailwtfornot.new(params[:hailwtfornot])
 
@@ -27,12 +31,4 @@ class Hailwtfornot < ActiveRecord::Base
     end
     hailwtfornot
   end
-
-  #def image1
-  #  Image.find(image1) if image1
-  #end
-
-  #def image2
-  #  Image.find(image2) if image2
-  #end
 end

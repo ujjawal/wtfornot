@@ -7,15 +7,15 @@
         - @hailwtfornot.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .field.form-padding.title
     = f.label :title
     = f.text_field :title
-  .field
+  .field.form-padding.image
     = f.label :image1
     = render :partial => "images/basic_fields", :locals => { :obj => "image1"}
 
-  .field
+  .field.form-padding.image
     = f.label :image2
     = render :partial => "images/basic_fields", :locals => { :obj => "image2"}
-  .actions
+  .actions.form-submit
     = f.submit
