@@ -2,19 +2,10 @@
 
 <p>
   <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
+  <%= @user.username %>
 </p>
 
 <p>
   <b>Points:</b>
   <%= @user.points %>
 </p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

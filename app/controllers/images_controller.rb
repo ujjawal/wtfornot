@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
     
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
   # GET /images
   # GET /images.json
@@ -70,6 +70,10 @@ class ImagesController < ApplicationController
 
     Hailwtfornot.transaction do
       if @image.save and @hailwtfornot.save!
+        if @image.user
+          @image.user.points+=1
+          @image.user.save!
+        end
         render :json => { :result => "success"}
       else
         render :json => { :result => "failure"}

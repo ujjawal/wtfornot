@@ -14,6 +14,10 @@ $ ->
     window.location = this.firstElementChild.getAttribute('value')
     return false
 
+  $('.user-with-image').click (e)->
+    window.location = this.firstElementChild.getAttribute('value')
+    return false
+
   $(".wtfornot").mouseover ->
     this.style.backgroundColor = "#ccc"
     this.style.cursor = "pointer"
@@ -27,6 +31,14 @@ $ ->
     this.style.cursor = "pointer"
     
   $(".image-with-points").mouseout ->
+    this.style.backgroundColor = ""
+    this.style.cursor = ""
+
+  $(".user-with-image").mouseover ->
+    this.style.backgroundColor = "#ccc"
+    this.style.cursor = "pointer"
+    
+  $(".user-with-image").mouseout ->
     this.style.backgroundColor = ""
     this.style.cursor = ""
 

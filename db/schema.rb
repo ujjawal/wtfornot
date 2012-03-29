@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20120329172159) do
     t.string   "title"
     t.string   "url"
     t.integer  "user_id"
-    t.integer  "points",     :default => 0
+    t.integer  "points",     :default => 1
     t.integer  "image1"
     t.integer  "image2"
     t.datetime "created_at",                :null => false
