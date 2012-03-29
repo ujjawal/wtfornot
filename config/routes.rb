@@ -3,7 +3,7 @@ Wtfornot::Application.routes.draw do
 
   resources :hailwtfornots
 
-  #resources :users
+  resources :users
 
   resources :images do
     member do

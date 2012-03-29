@@ -22,6 +22,12 @@ class User < ActiveRecord::Base
 
   has_many :hailwtfornots
   has_many :images
+  
+  after_validation(:on => :create) do
+    self.image_id = (1..Image.all.count).to_a.sample
+  end
+  
+  belongs_to :image, :class_name => 'Image', :foreign_key => :image_id
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png','image/gif']

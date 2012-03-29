@@ -52,6 +52,17 @@
   %h2 Most fucks given to these users
   %p
     .paginate
-      =paginate @users
+      = paginate @users, :param_name => 'user_page'
+    
+    - @users.each do |u|
+      .user-with-image
+        = hidden_field_tag nil, user_path(u), :class => ".hidden"
+        .left
+          %p #{u.username}
+          %p #{u.points} fucks given
+        
+        .right
+          - if u.image
+            = image_tag u.image.file.url(:medium), :class => 'medium3'
 
 .bottom
