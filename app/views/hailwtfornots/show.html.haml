@@ -17,7 +17,11 @@
   %h2 OR
 
   %br
-  %h3 Click on an image to give it a Fuck
+  %h3 Click on an image to give it a Fuck (You'll need to sign in)
+  %br
+
+  - if @hailwtfornot.user and @hailwtfornot.user == current_user
+    %h3.own You created this. So you've already given it a fuck.
 
 .show
   .left
@@ -31,32 +35,35 @@
       %h4.fucks_given_image2 Fucks Given: #{@image2.points}
       = link_to (image_tag @image2.file.url(:medium), :class => 'medium'), "#", :class => "img_link", :value => @image2.id, :points => @image2.points, :fucks_given_el => ".fucks_given_image2", :hailwtfornot_id => @hailwtfornot.id, :total_fucks_given_el => '.total_fucks_given', :total_points => @hailwtfornot.points
 
-
-:javascript
-  $(".img_link").click(function(e) {
-    e.preventDefault();
-    hailwtfornot_id = this.getAttribute('hailwtfornot_id')
-    image_id = this.getAttribute('value')
-    fucks_given = parseInt(this.getAttribute('points'))
-    total_fucks_given = parseInt(this.getAttribute('total_points'))
-    fucks_given_el = this.getAttribute('fucks_given_el')
-    total_fucks_given_el = this.getAttribute('total_fucks_given_el')
-    $.post("#{add_point_image_path}", 
-      {image_id: image_id, hailwtfornot_id: hailwtfornot_id}, 
-      function(data){
-        if(data.result == "success"){
-          html = "Fucks Given: " + (fucks_given + 1)
-          total_fucks_given_html = "Total fucks given: " + (total_fucks_given + 1)
-          $(fucks_given_el).html(html)
-          $(total_fucks_given_el).html(total_fucks_given_html)
-          $(".img_link").css('pointer-events', 'none')
-          $(".img_link").css('cursor', 'default')
+- if not (@hailwtfornot.user and @hailwtfornot.user == current_user)
+  :javascript
+    $(".img_link").click(function(e) {
+      e.preventDefault();
+      hailwtfornot_id = this.getAttribute('hailwtfornot_id')
+      image_id = this.getAttribute('value')
+      fucks_given = parseInt(this.getAttribute('points'))
+      total_fucks_given = parseInt(this.getAttribute('total_points'))
+      fucks_given_el = this.getAttribute('fucks_given_el')
+      total_fucks_given_el = this.getAttribute('total_fucks_given_el')
+      $.post("#{add_point_image_path}", 
+        {image_id: image_id, hailwtfornot_id: hailwtfornot_id}, 
+        function(data){
+          if(data.result == "success"){
+            html = "Fucks Given: " + (fucks_given + 1)
+            total_fucks_given_html = "Total fucks given: " + (total_fucks_given + 1)
+            $(fucks_given_el).html(html)
+            $(total_fucks_given_el).html(total_fucks_given_html)
+            $(".img_link").css('pointer-events', 'none')
+            $(".img_link").css('cursor', 'default')
+          }
+          else if(data.result == "login") {
+            window.location = "#{new_user_session_path}"
+          }
+          else{
+            alert("Failed to give it a fuck")
+          }
         }
-        else{
-          alert("Failed to give it a fuck")
-        }
-      }
-    )
-    return false;
-   });
+      )
+      return false;
+    });
 
