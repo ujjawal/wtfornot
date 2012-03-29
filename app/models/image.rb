@@ -2,6 +2,7 @@ class Image < ActiveRecord::Base
   paginates_per 4
   validates :file_file_name, :file_content_type, :file_file_size, :presence => true
 
+  belongs_to :user
 
   after_validation(:on => :create) do
     self.name = self.file_file_name if self.name.blank?

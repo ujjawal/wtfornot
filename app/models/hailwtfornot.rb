@@ -6,6 +6,7 @@ class Hailwtfornot < ActiveRecord::Base
 
   belongs_to :image_1, :class_name => 'Image', :foreign_key => :image1
   belongs_to :image_2, :class_name => 'Image', :foreign_key => :image2
+  belongs_to :user
  
   after_validation(:on => :create) do
     self.title = self.image_1.name + " Vs " + self.image_2.name if self.title.blank?

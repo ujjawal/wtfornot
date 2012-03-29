@@ -7,14 +7,14 @@
 
   %p.medium-font
     %b Wtfornot Created By:
-    = @hailwtfornot.user_id
+    = @hailwtfornot.user ? @hailwtfornot.user.username : User::ANON
 
   %p.medium-font
     %b.total_fucks_given Total fucks given: #{@hailwtfornot.points}
   
   = button_to "Create your own wtfornot", new_path, :method => :get, :class => "buttonTo"
 
-  %h1 OR
+  %h2 OR
 
   %br
   %h3 Click on an image to give it a Fuck

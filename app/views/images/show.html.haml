@@ -1,11 +1,13 @@
 %p#notice= notice
 
 .image
-  %p
-    %b Name:
-    = @image.name
+  %h1= @image.name
+  
+  %p.medium-font
+    %b Uploaded By:
+    = @image.user ? @image.user.username : User::ANON
 
-  %p
+  %p.medium-font
     %b Fucks given:
     = @image.points
 

@@ -7,6 +7,9 @@
         - @hailwtfornot.errors.full_messages.each do |msg|
           %li= msg
 
+  - if user_signed_in?
+    = f.hidden_field :user_id, { value: "#{current_user.id}" }
+
   .field.form-padding.title
     = f.label :title
     = f.text_field :title

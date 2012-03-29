@@ -15,7 +15,7 @@
             = link_to "Edit Info", edit_user_registration_path
             = link_to "Sign out", destroy_user_session_path, :method =>"delete" 
           - else
-            %p Anonymous
+            %p #{User::ANON}
             = link_to "Sign in", new_user_session_path
         %br    
         %hr

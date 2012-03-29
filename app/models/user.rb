@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+  ANON = "Anonymous"
   
   paginates_per 5
 
@@ -17,6 +19,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :username
+
+  has_many :hailwtfornots
+  has_many :images
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png','image/gif']
