@@ -17,6 +17,13 @@
       })();
 
   %body
+    -#Begin W3Counter Tracking Code -->
+    .tracker
+      = javascript_include_tag "http://www.w3counter.com/tracker.js"
+      :javascript
+        w3counter(61093);
+    -#End W3Counter Tracking Code-->
+    
     .wrapper
       .heading
         = link_to "GIAF (accepts only jpeg, png and gif)", root_url, :title => "Give it a fuck (accepts only jpeg, png and gif)"
