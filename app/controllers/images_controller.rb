@@ -74,8 +74,11 @@ class ImagesController < ApplicationController
       @image.points+=1
       @hailwtfornot.points+=1
 
+      wtfornot_user = WtfornotUser.new(:wtfornot_id => @hailwtfornot.id, :user_id => current_user.id)
+
+
       Hailwtfornot.transaction do
-        if @image.save and @hailwtfornot.save!
+        if @image.save and @hailwtfornot.save! and wtfornot_user.save!
           if @image.user
             @image.user.points+=1
             @image.user.save!

@@ -22,6 +22,10 @@ class HailwtfornotsController < ApplicationController
     @image1 = @hailwtfornot.image_1
     @image2 = @hailwtfornot.image_2
 
+    if user_signed_in?
+      @wtfornot_user = WtfornotUser.where(:user_id => current_user.id, :wtfornot_id => @hailwtfornot.id).first
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @hailwtfornot }
