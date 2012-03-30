@@ -9,7 +9,6 @@ gem 'mysql2'
 gem 'paperclip', '~> 2.7'
 gem 'haml-rails'
 gem 'rack-raw-upload', :git => 'git://github.com/newbamboo/rack-raw-upload.git'
-gem 'ruby-debug19'
 gem 'kaminari'
 gem 'devise'
 
@@ -24,6 +23,10 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+#group :test, :development do
+#  gem 'ruby-debug19'
+#end
 
 gem 'jquery-rails'
 

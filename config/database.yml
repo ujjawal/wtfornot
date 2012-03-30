@@ -19,7 +19,7 @@ test:
 
 production:
   username: root
-  password: foobar
+  password: a4OSMWaxXkGrhpi8mBb1
   adapter: mysql2
   encoding: utf8
   host: localhost
