@@ -56,7 +56,7 @@ class HailwtfornotsController < ApplicationController
 
     respond_to do |format|
       if !@hailwtfornot.errors.any?
-        format.html { redirect_to @hailwtfornot, notice: 'Hailwtfornot was successfully created.' }
+        format.html { redirect_to "/#{@hailwtfornot.id}", notice: 'Hailwtfornot was successfully created.' }
         format.json { render json: @hailwtfornot, status: :created, location: @hailwtfornot }
       else
         format.html { render action: "new" }
