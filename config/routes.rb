@@ -13,7 +13,7 @@ Wtfornot::Application.routes.draw do
   
   root :to => 'hailwtfornots#index'
   match 'new' => 'hailwtfornots#new'
-  match ':id' => 'hailwtfornots#show'
+  match ':id' => 'hailwtfornots#show', :id => /\d/
 
 
   # The priority is based upon order of creation:

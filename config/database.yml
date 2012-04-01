@@ -19,11 +19,11 @@ test:
 
 production:
   username: root
-  password: a4OSMWaxXkGrhpi8mBb1
+  password: kgAqJAg5i4ncz5lDrfGS
   adapter: mysql2
   encoding: utf8
-  host: giaf-uast23.dotcloud.com
-  port: 18604
+  host: newgiaf-uast23.dotcloud.com
+  port: 14583
   pool: 5
   reconnect: false
   database: wtfornot_production

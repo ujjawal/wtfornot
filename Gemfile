@@ -11,7 +11,6 @@ gem 'haml-rails'
 gem 'rack-raw-upload', :git => 'git://github.com/newbamboo/rack-raw-upload.git'
 gem 'kaminari'
 gem 'devise'
-gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
