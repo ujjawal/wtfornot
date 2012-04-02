@@ -1,3 +1,5 @@
+<% env = JSON.parse(File.read('/home/dotcloud/environment.json')) %>
+
 development:
   username: root
   password: foobar
@@ -19,11 +21,11 @@ test:
 
 production:
   username: root
-  password: KdWzGqztcKVhn7Mzfvca
+  password: <% env['DOTCLOUD_DATA_MYSQL_PASSWORD'] %>
   adapter: mysql2
   encoding: utf8
-  host: newgiaf-uast23.dotcloud.com
-  port: 14583
+  host: <% env['DOTCLOUD_DATA_MYSQL_HOST'] %>
+  port: <% env['DOTCLOUD_DATA_MYSQL_PORT'] %>
   pool: 5
   reconnect: false
   database: wtfornot_production
