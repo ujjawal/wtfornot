@@ -19,7 +19,7 @@ test:
 
 production:
   username: root
-  password: kgAqJAg5i4ncz5lDrfGS
+  password: KdWzGqztcKVhn7Mzfvca
   adapter: mysql2
   encoding: utf8
   host: newgiaf-uast23.dotcloud.com
