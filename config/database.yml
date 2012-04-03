@@ -1,4 +1,6 @@
-<% env = JSON.parse(File.read('/home/dotcloud/environment.json')) %>
+<% if FileTest.exists?("/home/dotcloud/environment.json") %>
+<%   env = JSON.parse(File.read('/home/dotcloud/environment.json')) %>
+<% end %>
 
 development:
   username: root
@@ -20,14 +22,11 @@ test:
   timeout: 5000
 
 production:
-  #username: <% env['DOTCLOUD_DATA_MYSQL_LOGIN'] %>
   username: root
   password: KdWzGqztcKVhn7Mzfvca
   adapter: mysql2
   encoding: utf8
-  #host: <% env['DOTCLOUD_DATA_MYSQL_HOST'] %>
   host: newgiaf-uast23.dotcloud.com
-  #port: <% env['DOTCLOUD_DATA_MYSQL_PORT'] %>
   port: 14583
   pool: 5
   reconnect: false

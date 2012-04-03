@@ -17,7 +17,9 @@
   %h2 OR
 
   %br
-  %h3 Click on an image to give it a Fuck (You'll need to sign in)
+  %h3 Click on an image to give it a Fuck
+  - if !user_signed_in?
+    %h3.red (You'll need to sign in to do that)
   %br
 
   - if @hailwtfornot.user and @hailwtfornot.user == current_user
