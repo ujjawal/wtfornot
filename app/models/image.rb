@@ -6,6 +6,9 @@ class ContentTypeValidator < ActiveModel::Validator
     if record.file_content_type.blank? or record.file_file_name.blank? or record.file_file_size.blank?
       record.errors[:base] << "Image can't be blank"
     end
+    if !record.file_file_size.blank? and (record.file_file_size <= 0 or record.file_file_size > 1048576)
+      record.errors[:base] << "Image size should be between 0 and 1MB"
+    end
   end 
 end
 
@@ -39,7 +42,5 @@ class Image < ActiveRecord::Base
     :s3_credentials => S3_CREDENTIALS,
     :path => ":attachment/:id/:style.:extension",
     :convert_options => { :all => "-auto-orient" }
-  validates_attachment_size :file, :less_than => 1.megabytes, 
-    :message => "Cannot digest files bigger than 1MB. Try again."
   
 end
