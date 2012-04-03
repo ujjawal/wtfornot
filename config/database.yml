@@ -1,4 +1,4 @@
-<% env = JSON.parse(File.read('/home/dotcloud/environment.json')) %>
+<% env = JSON.parse(File.read('/home/ujjawal/environment.json')) %>
 
 development:
   username: root
@@ -20,8 +20,8 @@ test:
   timeout: 5000
 
 production:
-  username: root
-  password: <% env['DOTCLOUD_DATA_MYSQL_PASSWORD'] %>
+  username: <% env['DOTCLOUD_DATA_MYSQL_LOGIN'] %>
+  password: KdWzGqztcKVhn7Mzfvca
   adapter: mysql2
   encoding: utf8
   host: <% env['DOTCLOUD_DATA_MYSQL_HOST'] %>
