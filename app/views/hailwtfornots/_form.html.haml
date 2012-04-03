@@ -4,7 +4,7 @@
       %h4= "#{pluralize(@hailwtfornot.errors.count, "error")} prohibited this wtfornot from being saved:"
 
       %ul
-        - @hailwtfornot.errors.full_messages.each do |msg|
+        - @hailwtfornot.errors.each do |attr, msg|
           %li= msg
 
   - if user_signed_in?
