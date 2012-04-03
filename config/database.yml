@@ -1,4 +1,4 @@
-<% env = JSON.parse(File.read('/home/ujjawal/environment.json')) %>
+<% env = JSON.parse(File.read('/home/dotcloud/environment.json')) %>
 
 development:
   username: root
