@@ -3,6 +3,9 @@ class ContentTypeValidator < ActiveModel::Validator
     if !record.file_content_type.blank? and !['image/jpeg', 'image/gif','image/png'].include?(record.file_content_type)
       record.errors[:base] << "Image '#{record.file_file_name}' is not a valid image type"
     end
+    if record.file_content_type.blank? or record.file_file_name.blank? or record.file_file_size.blank?
+      record.errors[:base] << "Image can't be blank"
+    end
   end 
 end
 
@@ -10,7 +13,7 @@ class Image < ActiveRecord::Base
 
   paginates_per 4
 
-  validates :file_file_name, :file_content_type, :file_file_size, :presence => true
+  #validates :file_file_name, :file_content_type, :file_file_size, :presence => true
   
   validates_with ContentTypeValidator
 
