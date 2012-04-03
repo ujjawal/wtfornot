@@ -139,6 +139,7 @@ DEPENDENCIES
   devise
   haml-rails
   jquery-rails
+  json
   kaminari
   mysql2
   paperclip (~> 2.7)
