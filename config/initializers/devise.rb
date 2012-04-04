@@ -85,7 +85,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "357e30ea8deff4897c0c5f20cde36ef97505988db04c6404a4eb71026d75869074f53ce05f5ea8ba484ebf06facb08e419791b7a87e7703a54f6ac65b673b11d"
+  config.pepper = "357e30ea8deff4897c0c5f20cde36ef97505988db04c6404a4eb71026d75869074f53ce05f5ea8ba484ebf06facb08e419791b7a87e7703a54f6ac65b673b11d"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -106,10 +106,10 @@ Devise.setup do |config|
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 4.weeks
 
   # If true, extends the user's remember period when remembered via cookie.
-  # config.extend_remember_period = false
+  config.extend_remember_period = false
 
   # If true, uses the password salt as remember token. This should be turned
   # to false if you are not using database authenticatable.
