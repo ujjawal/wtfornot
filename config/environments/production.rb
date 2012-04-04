@@ -54,8 +54,10 @@ Wtfornot::Application.configure do
   config.action_mailer.default_url_options = { :host => 'www.giaf.co' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => "127.0.0.1",
-    :port    => 25,
+    :address => "newgiaf-uast23.dotcloud.com",
+    :port    => 25899,
+    :user_name => "dotcloud",
+    :password => "80Ef1EULYM2bt4m7iRbO",
     :domain  => 'www.giaf.co'
   }
 
