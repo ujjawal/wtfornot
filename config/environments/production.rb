@@ -49,7 +49,7 @@ Wtfornot::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.default_url_options = { :host => 'www.giaf.co' }
   config.action_mailer.delivery_method = :smtp
@@ -58,7 +58,8 @@ Wtfornot::Application.configure do
     :port    => 25899,
     :user_name => "dotcloud",
     :password => "80Ef1EULYM2bt4m7iRbO",
-    :domain  => 'www.giaf.co'
+    :domain  => 'www.giaf.co',
+    :authentication => :cram_md5
   }
 
   # Enable threaded mode
