@@ -27,13 +27,13 @@ class Image < ActiveRecord::Base
   end
 
   if Rails.env == "production" 
-    S3_CREDENTIALS = { :access_key_id => 'AKIAIWPX6QKC6D3ODS3Q', 
-                       :secret_access_key => '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', 
-                       :bucket => "giafprod"} 
+    S3_CREDENTIALS = { :access_key_id => 'Amazon_Access_Key', 
+                       :secret_access_key => 'Secret', 
+                       :bucket => "bucketname"} 
   else 
-    S3_CREDENTIALS = { :access_key_id => 'AKIAIWPX6QKC6D3ODS3Q', 
-                       :secret_access_key => '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', 
-                       :bucket => "giafdev"} 
+    S3_CREDENTIALS = { :access_key_id => 'Access', 
+                       :secret_access_key => 'Secret', 
+                       :bucket => "bucketname"} 
   end
 
   has_attached_file :file, 
